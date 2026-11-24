@@ -19,6 +19,16 @@ pipeline {
                 echo "this is deploying...."
             }
         }
+        stage('scripted'){
+            steps {
+                script {
+                    sh """
+                        echo "Hello this is scripted" > script.txt
+                        car script.txt
+                    """
+                }
+            }
+        }
     }
 
 }
