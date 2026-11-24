@@ -29,8 +29,15 @@ pipeline {
             }
         }
         stage('test'){
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+            }
             steps {
-                echo "this is testing..."
+                script {
+                    echo "this is testing..."
+                }
             }
         }
         stage('deploy'){
