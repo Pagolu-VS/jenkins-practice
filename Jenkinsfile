@@ -19,9 +19,13 @@ pipeline {
     stages {
         stage('build'){
             steps {
-                echo "this is build..."
-                env 
-                echo "Hello, ${params.PERSON}"
+                script {
+                    sh"""
+                        echo "this is build..."
+                        env 
+                        echo "Hello, ${params.PERSON}"
+                    """
+                }
             }
         }
         stage('test'){
