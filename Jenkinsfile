@@ -24,7 +24,7 @@ pipeline {
                 script {
                     sh """
                         echo "Hello this is scripted" > script.txt
-                        car script.txt
+                        cat script.txt
                     """
                 }
             }
